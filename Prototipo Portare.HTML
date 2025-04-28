@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Passeios - Portare Travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Bem-vindos à Portare Travel!</h2>
+        <h2 id="titulo">Sua Jornada Começa Aqui.</h2>
+        <p id="intro-text">Vamos viajar? Escolha seu próximo destino:</p><br>
+        <div id="menu-inicial" class="menu">
+            <button onclick="mostrarDestino('dubai')">Dubai & Abu Dhabi</button>
+            <button onclick="mostrarDestino('egito')">Egito</button>
+            <button onclick="mostrarDestino('maldivas')">Maldivas</button>
+            <button onclick="mostrarDestino('japao')">Japão</button>
+        </div>
+
+        <div id="destinos" style="display: none;">
+            <button class="botao-voltar" onclick="voltarParaMenuInicial()">← Voltar</button>
+
+            <!-- ==================== DUBAI ==================== -->
+            <div id="dubai" class="destino" style="display: none;">
+                <h3>Dubai</h3>
+                <p class="descricao-dubai">
+                    Você sabia que o nome do País é Emirados Árabes Unidos?<br>
+                    São 7 Emirados para explorar:<br>
+                    Dubai – Abu Dhabi – Sharjah – Ras Al Khaimah (RAK) – Ajman – Fujairah – Umm Al Quwain
+                </p>
+                <div class="menu">
+                    <!-- Menu buttons remain the same -->
+                    <button onclick="mostrarSubcategoria('dubai', 'tour-grupo')">Tour EM GRUPO</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'tour-dubai')">TOUR DUBAI</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'tour-abu-dhabi')">TOUR ABU DHABI</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'tour-rak')">TOUR RAK</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'hatta')">HATTA</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'traslado')">TRANSLADO</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'carro-motorista')">CARRO COM MOTORISTA</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'abu-dhabi-carro')">ABU DHABI CARRO</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'deserto')">DESERTO</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'water')">WATER</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'air')">AIR</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'dubai-tickets')">DUBAI TICKETS</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'dubai-parks')">DUBAI PARKS</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'abu-dhabi-tickets')">ABU DHABI TICKETS</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'abu-dhabi-parks')">ABU DHABI PARKS</button>
+                    <button onclick="mostrarSubcategoria('dubai', 'la-perle')">LA PERLE</button>
+                     <button onclick="mostrarSubcategoria('dubai', 'portare')">PORTARE SERVIÇOS</button>
+                     <button onclick="mostrarSubcategoria('dubai', 'eventos')">EVENTOS</button>
+                </div>
+
+                <!-- Subcategorias Dubai -->
+                <div id="tour-grupo" class="subcategoria">
+                    <h4>Tour EM GRUPO</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Dubai+Tour+Grupo" alt="Tour Dubai Compartilhado Meio Periodo">
+                        <strong>Tour Dubai Compartilhado Meio Periodo (6h)</strong>
+                        <p>adulto ou kids +3 anos</p>
+                        <p><strong>Preço:</strong> $60.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-tour-dubai-compartilhado-meio-periodo" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Dubai Compartilhado Meio Periodo (6h)', 'quantidade-tour-dubai-compartilhado-meio-periodo', 60)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Abu+Dhabi+Tour+Grupo" alt="Tour Abu Dhabi Compartilhado">
+                        <strong>Tour Abu Dhabi Compartilhado - Tradicional / Dia Todo (8h)</strong>
+                        <p>adulto ou kids +3 anos</p>
+                        <p><strong>Preço:</strong> $100.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-tour-abu-dhabi-compartilhado-tradicional" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Abu Dhabi Compartilhado Tradicional (8h)', 'quantidade-tour-abu-dhabi-compartilhado-tradicional', 100)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Abu+Dhabi+Parque" alt="Tour Abu Dhabi Compartilhado c/ Parque">
+                        <strong>Tour Abu Dhabi Compartilhado c/ Parque - Dia Todo (8h)</strong>
+                        <p>adulto ou kids +3 anos</p>
+                        <p><strong>Preço:</strong> $167.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-tour-abu-dhabi-compartilhado-parque" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Abu Dhabi Compartilhado c/ Parque (8h)', 'quantidade-tour-abu-dhabi-compartilhado-parque', 167)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Iate+Churrasco" alt="Iate Compartilhado c/ Churrasco">
+                        <strong>Iate Compartilhado c/ Churrasco</strong>
+                        <p>adulto ou kids</p>
+                        <p><strong>Preço:</strong> $132.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-iate-compartilhado-churrasco" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Iate Compartilhado c/ Churrasco', 'quantidade-iate-compartilhado-churrasco', 132)">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tour-dubai" class="subcategoria">
+                    <h4>TOUR DUBAI</h4>
+                    <div class="passeio">
+                        <h5>TOUR DUBAI 4H (Privativo)</h5>
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Dubai+Tour+4h" alt="Tour Dubai Meio Periodo (4h)">
+                        <strong>Tour Dubai Meio Periodo (4h)</strong>
+                        <p>Guia e carro privativo</p>
+                        <p><strong>Preço (por pessoa):</strong><br>
+                            1 pessoa: $350.00<br>
+                            2 pessoas: $175.00<br>
+                            3 pessoas: $116.67<br>
+                            4+ pessoas: $87.50
+                         </p>
+                        <p><i>Selecione a quantidade TOTAL de pessoas e adicione ao carrinho. O preço será ajustado na consulta.</i></p>
+                        <div class="quantidade-container">
+                             <input type="number" id="quantidade-tour-dubai-4h-privativo" value="1" min="1" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Dubai Privativo (4h)', 'quantidade-tour-dubai-4h-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <h5>TOUR DUBAI 8H (Privativo)</h5>
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Dubai+Tour+8h" alt="Tour Dubai 8h">
+                        <strong>Tour Dubai Dia Todo (8h)</strong>
+                        <p>Guia e carro privativo</p>
+                        <p><strong>Preço (por pessoa):</strong><br>
+                            1 pessoa: $550.00<br>
+                            2 pessoas: $275.00<br>
+                            3 pessoas: $183.33<br>
+                            4+ pessoas: $137.50
+                         </p>
+                         <p><i>Selecione a quantidade TOTAL de pessoas e adicione ao carrinho. O preço será ajustado na consulta.</i></p>
+                         <div class="quantidade-container">
+                             <input type="number" id="quantidade-tour-dubai-8h-privativo" value="1" min="1" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Dubai Privativo (8h)', 'quantidade-tour-dubai-8h-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Dubai+Onibus" alt="Tour Dubai Ônibus 2025">
+                        <strong>Tour Dubai Ônibus 2025 Corporativo (até 35p) - Dia Todo (10h)</strong>
+                        <p>Ideal para grupos grandes</p>
+                        <p><strong>Preço Total:</strong> $479.56</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-tour-dubai-onibus-2025" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly> <!-- Readonly as it's a fixed group price -->
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Dubai Ônibus Corporativo (10h)', 'quantidade-tour-dubai-onibus-2025', 479.56)">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div id="tour-abu-dhabi" class="subcategoria">
+                    <h4>TOUR ABU DHABI (Privativo)</h4>
+                    <div class="passeio">
+                         <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Abu+Dhabi+Tour" alt="Tour Abu Dhabi 8h">
+                        <strong>Tour Abu Dhabi (8h)</strong>
+                        <p>Guia e carro privativo</p>
+                        <p><strong>Preço (por pessoa):</strong><br>
+                            1 pessoa: $685.00<br>
+                            2 pessoas: $343.00<br>
+                            3 pessoas: $229.00<br>
+                            4+ pessoas: $172.00
+                         </p>
+                         <p><i>Selecione a quantidade TOTAL de pessoas e adicione ao carrinho. O preço será ajustado na consulta.</i></p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-tour-abu-dhabi-8h-privativo" value="1" min="1" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Abu Dhabi Privativo (8h)', 'quantidade-tour-abu-dhabi-8h-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                 </div>
+
+                <div id="tour-rak" class="subcategoria">
+                    <h4>TOUR RAS AL KHAIMAH (RAK) (Privativo)</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=RAK+Tour" alt="Tour RAK 8h">
+                        <strong>Tour Jebel Jais - Montanhas (Dia Todo - 8h)</strong>
+                        <p>Guia e carro privativo</p>
+                         <p><strong>Preço (por pessoa):</strong><br>
+                            <!-- Assuming RAK price is similar to Hatta, adjust if needed -->
+                            2 pessoas: $342.50<br>
+                            3 pessoas: $227.25<br>
+                            4+ pessoas: $172.00
+                         </p>
+                         <p><i>Selecione a quantidade TOTAL de pessoas (mínimo 2) e adicione ao carrinho. O preço será ajustado na consulta.</i></p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-tour-rak-privativo" value="2" min="2" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour RAK Jebel Jais Privativo (8h)', 'quantidade-tour-rak-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hatta" class="subcategoria">
+                    <h4>HATTA (Privativo)</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Hatta+Tour" alt="Tour Hatta 8h">
+                        <strong>Tour Hatta Montanhas (Dia Todo - 8h)</strong>
+                        <p>Guia e carro privativo</p>
+                        <p><strong>Preço (por pessoa):</strong><br>
+                            2 pessoas: $342.50<br>
+                            3 pessoas: $227.25<br>
+                            4+ pessoas: $172.00
+                         </p>
+                         <p><i>Selecione a quantidade TOTAL de pessoas (mínimo 2) e adicione ao carrinho. O preço será ajustado na consulta.</i></p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-hatta-privativo" value="2" min="2" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Hatta Montanhas Privativo (8h)', 'quantidade-hatta-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="traslado" class="subcategoria">
+                    <h4>TRANSLADO PICK UP AND DROP OFF</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Aeroporto+Rep" alt="Representante no Aeroporto">
+                        <strong>Representante no Aeroporto (Português)</strong>
+                        <p>Assistência fora da imigração</p>
+                        <p><strong>Preço:</strong> $163.49</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-traslado-representante-portugues" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Representante Aeroporto (Português)', 'quantidade-traslado-representante-portugues', 163.49)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Aeroporto+Meet" alt="Serviços de recepção DXB">
+                        <strong>Serviço de Recepção (Meet & Greet - Inglês)</strong>
+                        <p>Assistência dentro do Terminal DXB</p>
+                        <p><strong>Preço:</strong> $217.98</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-traslado-recepcao-ingles" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Serviço Recepção Aeroporto DXB (Inglês)', 'quantidade-traslado-recepcao-ingles', 217.98)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Translado+Privativo" alt="Translado Aeroporto-Hotel">
+                        <strong>Translado Aeroporto DXB ↔ Hotel Dubai (1 Trecho)</strong>
+                        <p>Carro privativo</p>
+                         <p><strong>Preço Total (por trecho):</strong><br>
+                            1 pessoa: $95.00<br>
+                            2 pessoas: $96.00 ($48.00/pax)<br> <!-- Assuming price is per car, corrected for 2 pax -->
+                            3 pessoas: $95.01 ($31.67/pax)<br> <!-- Assuming price is per car, corrected for 3 pax -->
+                            4 pessoas: $152.00 ($38.00/pax)<br> <!-- Assuming requires VAN -->
+                            Até 10 pessoas (MiniBus): $204.40 ($20.44/pax)
+                         </p>
+                         <p><i>Selecione a quantidade TOTAL de pessoas e adicione. O preço será ajustado na consulta.</i></p>
+                         <div class="quantidade-container">
+                             <input type="number" id="quantidade-translado-aeroporto-hotel-privativo" value="1" min="1" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Translado Privativo Aeroporto-Hotel (1 Trecho)', 'quantidade-translado-aeroporto-hotel-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Translado+Onibus" alt="Translado Ônibus Corporativo">
+                        <strong>Translado Aeroporto DXB ↔ Hotel Dubai (1 Trecho) - Ônibus Corporativo</strong>
+                        <p>Até 35 pessoas</p>
+                        <p><strong>Preço Total (por trecho):</strong> $386.92</p>
+                        <div class="quantidade-container">
+                             <input type="number" id="quantidade-translado-onibus" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Translado Ônibus Corporativo (1 Trecho)', 'quantidade-translado-onibus', 386.92)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Translado+AUH-DXB" alt="Translado Abu Dhabi-Dubai">
+                        <strong>Translado Abu Dhabi ↔ Dubai (1 Trecho)</strong>
+                        <p>Carro privativo</p>
+                         <p><strong>Preço Total (por trecho):</strong><br>
+                            1-3 pessoas: $190.74
+                         </p>
+                         <p><i>Para grupos maiores, consulte-nos. Adicione 1 unidade para o trecho.</i></p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-traslado-abu-dubai-privativo" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Translado Privativo Abu Dhabi-Dubai (1 Trecho)', 'quantidade-traslado-abu-dubai-privativo', 190.74)">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carro-motorista" class="subcategoria">
+                    <h4>CARRO COM MOTORISTA</h4>
+                    <div class="passeio">
+                        <h5>CARRO COM MOTORISTA (4H)</h5>
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Carro+Motorista+4h" alt="Dubai Carro 4h">
+                        <strong>Carro c/ Motorista (Sem Guia) - Meio Período (4h)</strong>
+                        <p>Disposição em Dubai</p>
+                        <p><strong>Preço Total (por carro):</strong><br>
+                            1-3 pessoas (Sedan): $190.74<br>
+                            4-5 pessoas (Minivan): $190.74
+                        </p>
+                        <p><i>Adicione 1 unidade para o serviço de 4h.</i></p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-dubai-carro-4h" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Dubai: Carro c/ Motorista (4h)', 'quantidade-dubai-carro-4h', 190.74)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <h5>CARRO COM MOTORISTA (8H)</h5>
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Carro+Motorista+8h" alt="Dubai Carro 8h">
+                        <strong>Carro c/ Motorista (Sem Guia) - Dia Todo (8h)</strong>
+                        <p>Disposição em Dubai</p>
+                        <p><strong>Preço Total (por carro):</strong><br>
+                            1-3 pessoas (Sedan): $299.73<br>
+                            4-5 pessoas (Minivan): $299.73
+                        </p>
+                        <p><i>Adicione 1 unidade para o serviço de 8h.</i></p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-dubai-carro-8h" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Dubai: Carro c/ Motorista (8h)', 'quantidade-dubai-carro-8h', 299.73)">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div id="abu-dhabi-carro" class="subcategoria">
+                    <h4>ABU DHABI - CARRO COM MOTORISTA (8H)</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=AUH+Carro+Motorista+8h" alt="Abu Dhabi Carro 8h">
+                        <strong>Carro c/ Motorista (Sem Guia) - Dia Todo (8h)</strong>
+                        <p>Disposição em Abu Dhabi (partindo de Abu Dhabi)</p>
+                        <p><strong>Preço Total (por carro):</strong><br>
+                            1-3 pessoas (Sedan): $299.73<br>
+                            4-5 pessoas (Minivan): $299.73 <!-- Assuming same price up to minivan capacity -->
+                         </p>
+                         <p><i>Adicione 1 unidade para o serviço de 8h.</i></p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-abu-dhabi-carro-8h" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Abu Dhabi: Carro c/ Motorista (8h)', 'quantidade-abu-dhabi-carro-8h', 299.73)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== DESERTO SUBCATEGORY ==================== -->
+                 <div id="deserto" class="subcategoria">
+                    <h4>DESERTO</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+Compartilhado" alt="Safari Compartilhado">
+                        <strong>Safari no Deserto Compartilhado</strong>
+                        <p>Completo c/ Jantar (Bebidas Alcoólicas à parte)</p>
+                        <p><strong>Preço:</strong> $110.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-compartilhado" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Safari Deserto Compartilhado c/ Jantar', 'quantidade-safari-compartilhado', 110)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Guia+Safari" alt="Adicional Guia Português">
+                        <strong>Adicional Guia em Português para Safari</strong>
+                        <p>Valor total para o serviço de guia (adicionar ao Safari VIP)</p>
+                        <p><strong>Preço Total:</strong> $280.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-adicional-guia" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Adicional Guia Português Safari', 'quantidade-safari-adicional-guia', 280)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Menu+Chef+Deserto" alt="Adicional Menu Chef">
+                        <strong>Adicional Menu Chef 5 Estrelas</strong>
+                        <p>Upgrade para o jantar no deserto (por pessoa)</p>
+                        <p><strong>Preço:</strong> $163.49</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-adicional-menu" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Adicional Menu Chef 5* Deserto', 'quantidade-safari-adicional-menu', 163.49)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+VIP" alt="Safari VIP">
+                        <strong>Safari no Deserto VIP Privativo</strong>
+                        <p>Completo c/ Jantar - Carro VIP</p>
+                        <p><strong>Preço (por pessoa):</strong><br>
+                           1 pessoa: $660.00<br>
+                           2 pessoas: $330.00<br>
+                           3 pessoas: $220.00<br>
+                           4 pessoas: $165.00<br>
+                           5 pessoas: $132.00<br>
+                           6 pessoas: $110.00
+                         </p>
+                         <p><i>Selecione a quantidade TOTAL de pessoas e adicione ao carrinho. O preço será ajustado na consulta.</i></p>
+                         <div class="quantidade-container">
+                             <input type="number" id="quantidade-safari-vip-privativo" value="1" min="1" max="6" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Safari Deserto VIP Privativo c/ Jantar', 'quantidade-safari-vip-privativo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+Bebidas" alt="Safari com Bebidas Inclusas">
+                        <strong>Safari no Deserto com Jantar (Bebidas Inclusas)</strong>
+                        <p>Inclui bebidas alcoólicas selecionadas</p>
+                        <p><strong>Preço:</strong> $220.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-bebidas-inclusas" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Safari Deserto c/ Jantar e Bebidas Inclusas', 'quantidade-safari-bebidas-inclusas', 220)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== WATER SUBCATEGORY ==================== -->
+                 <div id="water" class="subcategoria">
+                    <h4>WATER</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Jetski" alt="Jetski">
+                        <strong>1 Jetski (30 min) - 1 pessoa</strong>
+                        <p>Pilotando sozinho</p>
+                        <p><strong>Preço:</strong> $82.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-jetski-1pax" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Jetski 30min (1 pessoa)', 'quantidade-jetski-1pax', 82)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Jetski+2pax" alt="Jetski 2 pessoas">
+                        <strong>1 Jetski (30 min) - 2 pessoas</strong>
+                        <p>Compartilhando o mesmo Jetski (preço por pessoa)</p>
+                        <p><strong>Preço por Pessoa:</strong> $41.00</p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-jetski-2pax" value="2" min="2" max="2" class="quantidade" aria-label="Quantidade" readonly> <!-- Assuming fixed 2 pax for this price -->
+                            <button class="botao" onclick="adicionarAoCarrinho('Jetski 30min (2 pessoas)', 'quantidade-jetski-2pax', 41)">Adicionar (2 Pessoas)</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Jetcar" alt="Jetcar">
+                        <strong>1 Jetcar (30 min) - 2 pessoas</strong>
+                        <p>Valor total para o Jetcar</p>
+                        <p><strong>Preço Total:</strong> $275.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-jetcar-2pax" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Jetcar 30min (para 2 pessoas)', 'quantidade-jetcar-2pax', 275)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Parasailing" alt="Parasailing">
+                        <strong>Parasailing (30 min) - 1 pessoa</strong>
+                        <p>Voo individual</p>
+                        <p><strong>Preço:</strong> $82.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-parasailing-1pax" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Parasailing 30min (1 pessoa)', 'quantidade-parasailing-1pax', 82)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Yacht+44ft" alt="Yacht 44 pés">
+                        <strong>Yacht 44 pés (3 horas)</strong>
+                        <p>Capacidade até 12 pessoas (Valor total do aluguel)</p>
+                        <p><strong>Preço Total:</strong> $600.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-yacht-44ft" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Yacht 44 pés (3 horas)', 'quantidade-yacht-44ft', 600)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Mergulho+Dubai" alt="Mergulho Dubai">
+                        <strong>Mergulho em Dubai (30 Minutos)</strong>
+                        <p>Para iniciantes ou experientes (adulto ou kids)</p>
+                        <p><strong>Preço:</strong> $132.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-mergulho-dubai" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Mergulho em Dubai (30 min)', 'quantidade-mergulho-dubai', 132)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Deep+Dive+Cert" alt="Deep Diving Certificados">
+                        <strong>Deep Diving - Mergulhadores Certificados (Pacote Padrão)</strong>
+                        <p>Profundidade: 12-30 m (Duração: 40 min)</p>
+                        <p><strong>Preço:</strong> $330.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-deep-dive-padrao" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Deep Diving Certificado - Padrão (40 min)', 'quantidade-deep-dive-padrao', 330)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Deep+Dive+Full" alt="Deep Diving Certificados com Certificado">
+                        <strong>Deep Diving - Mergulhadores Certificados (Pacote c/ Certificado)</strong>
+                         <p>Profundidade: 12-30 m (Duração: 40 min) + Certificado</p>
+                        <p><strong>Preço:</strong> $654.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-deep-dive-certificado" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Deep Diving Certificado - c/ Certificado (40 min)', 'quantidade-deep-dive-certificado', 654)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== AIR SUBCATEGORY ==================== -->
+                 <div id="air" class="subcategoria">
+                    <h4>AIR</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Helicopter+12min" alt="Helicóptero 12 min">
+                        <strong>Helicóptero 12 min - 1 adulto</strong>
+                        <p>Voo panorâmico</p>
+                        <p><strong>Preço:</strong> $194.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-helicoptero-12min" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Helicóptero 12 min', 'quantidade-helicoptero-12min', 194)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Helicopter+17min" alt="Helicóptero 17 min">
+                        <strong>Helicóptero 17 min - 1 adulto</strong>
+                        <p>Voo panorâmico estendido</p>
+                        <p><strong>Preço:</strong> $260.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-helicoptero-17min" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Helicóptero 17 min', 'quantidade-helicoptero-17min', 260)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Helicopter+22min" alt="Helicóptero 22 min">
+                        <strong>Helicóptero 22 min - 1 adulto</strong>
+                        <p>Voo panorâmico longo</p>
+                        <p><strong>Preço:</strong> $355.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-helicoptero-22min" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Helicóptero 22 min', 'quantidade-helicoptero-22min', 355)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Helicopter+30min" alt="Helicóptero 30 min">
+                        <strong>Helicóptero 30 min - 1 adulto</strong>
+                        <p>Voo panorâmico completo</p>
+                        <p><strong>Preço:</strong> $383.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-helicoptero-30min" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Helicóptero 30 min', 'quantidade-helicoptero-30min', 383)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Balao+Deserto" alt="Balão no Deserto">
+                        <strong>Balão no Deserto ao Nascer do Sol</strong>
+                        <p>Com café da manhã (adulto)</p>
+                        <p><strong>Preço:</strong> $545.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-balao-deserto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Balão no Deserto c/ Café (Adulto)', 'quantidade-balao-deserto', 545)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== DUBAI TICKETS SUBCATEGORY ==================== -->
+                 <div id="dubai-tickets" class="subcategoria">
+                     <h4>DUBAI TICKETS</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Global+Village" alt="Ingresso Global Village">
+                        <strong>Ingresso Global Village (Qualquer Dia)</strong>
+                        <p>Adulto ou kids (+3 anos)</p>
+                        <p><strong>Preço:</strong> $8.17</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-global-village" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Global Village', 'quantidade-global-village', 8.17)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=The+View+Fila" alt="Ingresso The View com fila">
+                        <strong>Ingresso The View (Vista Palmeira) - Com Fila</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $29.97</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-the-view-fila-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso The View c/ Fila - Adulto', 'quantidade-the-view-fila-adulto', 29.97)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=The+View+Fila" alt="Ingresso The View com fila">
+                        <strong>Ingresso The View (Vista Palmeira) - Com Fila</strong>
+                        <p>Kids</p>
+                        <p><strong>Preço:</strong> $20.44</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-the-view-fila-kids" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso The View c/ Fila - Kids', 'quantidade-the-view-fila-kids', 20.44)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=The+View+Sem+Fila" alt="Ingresso The View sem fila">
+                        <strong>Ingresso The View (Vista Palmeira) - Sem Fila</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $48.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-the-view-sem-fila-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso The View s/ Fila - Adulto', 'quantidade-the-view-sem-fila-adulto', 48)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=The+View+Sem+Fila" alt="Ingresso The View sem fila">
+                        <strong>Ingresso The View (Vista Palmeira) - Sem Fila</strong>
+                        <p>Criança</p>
+                        <p><strong>Preço:</strong> $33.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-the-view-sem-fila-crianca" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso The View s/ Fila - Criança', 'quantidade-the-view-sem-fila-crianca', 33)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+124/125+Tarde" alt="Ingresso Burj Khalifa Tarde">
+                        <strong>Ingresso Burj Khalifa 124/125 c/ Fila (Após 14h)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $70.84</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-124-tarde-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 124/125 Fila (Após 14h) - Adulto', 'quantidade-bk-124-tarde-adulto', 70.84)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+124/125+Tarde" alt="Ingresso Burj Khalifa Tarde">
+                        <strong>Ingresso Burj Khalifa 124/125 c/ Fila (Após 14h)</strong>
+                        <p>Kids (3-8 anos)</p>
+                        <p><strong>Preço:</strong> $44.96</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-124-tarde-kids" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 124/125 Fila (Após 14h) - Kids', 'quantidade-bk-124-tarde-kids', 44.96)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+124/125+Manha" alt="Ingresso Burj Khalifa Manhã">
+                        <strong>Ingresso Burj Khalifa 124/125 c/ Fila (9h-14h)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $49.05</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-124-manha-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 124/125 Fila (9h-14h) - Adulto', 'quantidade-bk-124-manha-adulto', 49.05)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+124/125+Manha" alt="Ingresso Burj Khalifa Manhã">
+                        <strong>Ingresso Burj Khalifa 124/125 c/ Fila (9h-14h)</strong>
+                        <p>Kids (3-8 anos)</p>
+                        <p><strong>Preço:</strong> $39.78</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-124-manha-kids" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 124/125 Fila (9h-14h) - Kids', 'quantidade-bk-124-manha-kids', 39.78)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+Aquario" alt="Ingresso Burj Khalifa + Aquário">
+                        <strong>Ingresso Burj Khalifa 124/125 c/ Fila + Aquário</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $84.47</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-aquario-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 124/125 Fila + Aquário - Adulto', 'quantidade-bk-aquario-adulto', 84.47)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+Aquario" alt="Ingresso Burj Khalifa + Aquário">
+                        <strong>Ingresso Burj Khalifa 124/125 c/ Fila + Aquário</strong>
+                        <p>Kids (3-8 anos)</p>
+                        <p><strong>Preço:</strong> $74.93</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-aquario-kids" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 124/125 Fila + Aquário - Kids', 'quantidade-bk-aquario-kids', 74.93)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+148+Tarde" alt="Ingresso Burj Khalifa 148 Tarde">
+                        <strong>Ingresso Burj Khalifa 124/125/148 s/ Fila (Após 14h)</strong>
+                        <p>Adulto ou Kids</p>
+                        <p><strong>Preço:</strong> $152.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-148-tarde" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 148 s/ Fila (Após 14h)', 'quantidade-bk-148-tarde', 152)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+148+Manha" alt="Ingresso Burj Khalifa 148 Manhã">
+                        <strong>Ingresso Burj Khalifa 124/125/148 s/ Fila (9h-14h)</strong>
+                        <p>Adulto ou Kids</p>
+                        <p><strong>Preço:</strong> $109.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-148-manha" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 148 s/ Fila (9h-14h)', 'quantidade-bk-148-manha', 109)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=BK+154" alt="Ingresso Burj Khalifa 154">
+                        <strong>Ingresso Burj Khalifa s/ Fila Andar 154</strong>
+                        <p>Adulto ou Kids</p>
+                        <p><strong>Preço:</strong> $221.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-bk-154" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso BK 154 s/ Fila', 'quantidade-bk-154', 221)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Sky+Views" alt="Ingresso Sky Views Observatory">
+                        <strong>Ingresso Sky Views Observatory + Escorregador</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $68.12</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-sky-views" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Sky Views + Escorregador', 'quantidade-sky-views', 68.12)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Museu+Futuro" alt="Ingresso Museu do Futuro">
+                        <strong>Ingresso Museu do Futuro</strong>
+                        <p>Adulto ou Kids</p>
+                        <p><strong>Preço:</strong> $42.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-museu-futuro" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Museu do Futuro', 'quantidade-museu-futuro', 42)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=The+Frame" alt="Ingresso The Frame">
+                        <strong>Ingresso The Frame (Moldura Dourada)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $15.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-the-frame-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso The Frame - Adulto', 'quantidade-the-frame-adulto', 15)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=The+Frame" alt="Ingresso The Frame">
+                        <strong>Ingresso The Frame (Moldura Dourada)</strong>
+                        <p>Kids (3-12 anos)</p>
+                        <p><strong>Preço:</strong> $6.94</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-the-frame-kids" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso The Frame - Kids', 'quantidade-the-frame-kids', 6.94)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Aquario+Mall" alt="Ingresso Aquário Dubai Mall">
+                        <strong>Ingresso Aquário Dubai Mall</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $55.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-aquario-mall" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Aquário Dubai Mall', 'quantidade-aquario-mall', 55)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Miracle+Garden" alt="Ingresso Miracle Garden">
+                        <strong>Ingresso Miracle Garden</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $28.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-miracle-garden-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Miracle Garden - Adulto', 'quantidade-miracle-garden-adulto', 28)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Miracle+Garden" alt="Ingresso Miracle Garden">
+                        <strong>Ingresso Miracle Garden</strong>
+                        <p>Criança (3-12 anos)</p>
+                        <p><strong>Preço:</strong> $23.16</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-miracle-garden-crianca" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Miracle Garden - Criança', 'quantidade-miracle-garden-crianca', 23.16)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Ski+Dubai" alt="Ingresso Ski Dubai">
+                        <strong>Ingresso Ski Dubai</strong>
+                        <p>Adulto/Kids</p>
+                        <p><strong>Preço:</strong> $100.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-ski-dubai" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Ski Dubai', 'quantidade-ski-dubai', 100)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Burj+Al+Arab+Tour" alt="Tour Burj al Arab">
+                        <strong>Tour Guiado Burj al Arab</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $68.12</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-burj-al-arab-tour" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Guiado Burj al Arab', 'quantidade-burj-al-arab-tour', 68.12)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Abra+Ride" alt="Abra Lake Ride">
+                        <strong>Abra Lake Ride - Show das Águas</strong>
+                        <p>Passeio de barco durante o show</p>
+                        <p><strong>Preço:</strong> $18.80</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-abra-lake-ride" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Abra Lake Ride - Show das Águas', 'quantidade-abra-lake-ride', 18.80)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Ain+Dubai+Corta+Fila" alt="Ingresso Ain Dubai c/ Corta Fila">
+                        <strong>Ingresso Roda Gigante Ain Dubai c/ Corta Fila</strong>
+                        <p>Adulto (não prime hour)</p>
+                        <p><strong>Preço:</strong> $53.41</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-ain-corta-fila-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Ain Dubai c/ Corta Fila - Adulto', 'quantidade-ain-corta-fila-adulto', 53.41)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Ain+Dubai+Sem+Fila" alt="Ingresso Ain Dubai s/ Corta Fila">
+                        <strong>Ingresso Roda Gigante Ain Dubai s/ Corta Fila</strong>
+                         <p>Adulto (não prime hour)</p>
+                        <p><strong>Preço:</strong> $39.51</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-ain-sem-fila-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Ain Dubai s/ Corta Fila - Adulto', 'quantidade-ain-sem-fila-adulto', 39.51)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Ain+Dubai+Sem+Fila" alt="Ingresso Ain Dubai s/ Corta Fila">
+                        <strong>Ingresso Roda Gigante Ain Dubai s/ Corta Fila</strong>
+                        <p>Kids (não prime hour)</p>
+                        <p><strong>Preço:</strong> $31.34</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-ain-sem-fila-kids" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Ain Dubai s/ Corta Fila - Kids', 'quantidade-ain-sem-fila-kids', 31.34)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== DUBAI PARKS SUBCATEGORY ==================== -->
+                 <div id="dubai-parks" class="subcategoria">
+                    <h4>DUBAI PARKS</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=IMG+Marvel" alt="Ingresso IMG Marvel">
+                        <strong>Ingresso Parque IMG Worlds of Adventure (Marvel)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $90.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-img-marvel" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso IMG Marvel', 'quantidade-img-marvel', 90)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Legoland" alt="Ingresso Legoland">
+                        <strong>Ingresso Legoland Dubai</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $90.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-legoland" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Legoland Dubai', 'quantidade-legoland', 90)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Motiongate" alt="Ingresso Motiongate">
+                        <strong>Ingresso Parque Motiongate Dubai</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $80.38</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-motiongate" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Motiongate Dubai', 'quantidade-motiongate', 80.38)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Motiongate+Fila" alt="Ingresso Motiongate c/ Corta Fila">
+                        <strong>Ingresso Parque Motiongate Dubai c/ Corta Fila</strong>
+                         <p>Adulto</p>
+                        <p><strong>Preço:</strong> $121.25</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-motiongate-corta-fila" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Motiongate Dubai c/ Corta Fila', 'quantidade-motiongate-corta-fila', 121.25)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Legoland+Water" alt="Ingresso Legoland Water Park">
+                        <strong>Ingresso Legoland Water Park</strong>
+                         <p>Adulto</p>
+                        <p><strong>Preço:</strong> $90.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-legoland-water" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Legoland Water Park', 'quantidade-legoland-water', 90)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Real+Madrid" alt="Ingresso Parque Real Madrid">
+                        <strong>Ingresso Parque Real Madrid World</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $90.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-real-madrid" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Parque Real Madrid World', 'quantidade-real-madrid', 90)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Atlantis+Aqua" alt="Ingresso Atlantis Aquaventure">
+                        <strong>Ingresso Parque Aquático Atlantis Aquaventure</strong>
+                         <p>Adulto</p>
+                        <p><strong>Preço:</strong> $90.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-atlantis-aqua" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Atlantis Aquaventure', 'quantidade-atlantis-aqua', 90)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Atlantis+Aqua+Fila" alt="Ingresso Atlantis Aquaventure c/ Corta Fila">
+                        <strong>Ingresso Parque Aquático Atlantis Aquaventure c/ Corta Fila</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $180.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-atlantis-aqua-fila" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Atlantis Aquaventure c/ Corta Fila', 'quantidade-atlantis-aqua-fila', 180)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+Park+Zoo" alt="Ingresso Dubai Safari Park Zoo">
+                        <strong>Ingresso Dubai Safari Park Zoo</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $14.99</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-park-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Dubai Safari Park Zoo - Adulto', 'quantidade-safari-park-adulto', 14.99)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+Park+Zoo" alt="Ingresso Dubai Safari Park Zoo">
+                        <strong>Ingresso Dubai Safari Park Zoo</strong>
+                        <p>Criança (3-12 anos)</p>
+                        <p><strong>Preço:</strong> $6.81</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-park-crianca" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Dubai Safari Park Zoo - Criança', 'quantidade-safari-park-crianca', 6.81)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+Park+Exp" alt="Ingresso Experiência Dubai Safari Park Zoo">
+                        <strong>Ingresso Experiência Dubai Safari Park Zoo</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $35.42</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-park-exp-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Experiência Safari Park Zoo - Adulto', 'quantidade-safari-park-exp-adulto', 35.42)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Safari+Park+Exp" alt="Ingresso Experiência Dubai Safari Park Zoo">
+                        <strong>Ingresso Experiência Dubai Safari Park Zoo</strong>
+                        <p>Criança (3-12 anos)</p>
+                        <p><strong>Preço:</strong> $27.25</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-safari-park-exp-crianca" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Experiência Safari Park Zoo - Criança', 'quantidade-safari-park-exp-crianca', 27.25)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== ABU DHABI TICKETS SUBCATEGORY ==================== -->
+                 <div id="abu-dhabi-tickets" class="subcategoria">
+                    <h4>ABU DHABI TICKETS</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Qasr+Al+Watan" alt="Ingresso Palácio Presidencial">
+                        <strong>Ingresso Palácio Presidencial (Qasr Al Watan)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $18.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-qasr-al-watan" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Palácio Presidencial AD - Adulto', 'quantidade-qasr-al-watan', 18)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Louvre+Abu+Dhabi" alt="Ingresso Louvre Abu Dhabi">
+                        <strong>Ingresso Museu do Louvre Abu Dhabi</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $18.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-louvre-ad" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Louvre Abu Dhabi - Adulto', 'quantidade-louvre-ad', 18)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Grande+Mesquita" alt="Ingresso Grande Mesquita">
+                        <strong>Ingresso Grande Mesquita Sheikh Zayed</strong>
+                        <p>Entrada gratuita (agendamento recomendado)</p>
+                        <p><strong>Preço:</strong> $0.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-grande-mesquita" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Grande Mesquita AD (Gratuito)', 'quantidade-grande-mesquita', 0)">Adicionar (Gratuito)</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Etihad+Tower+Cafe" alt="Etihad Tower Observation Deck">
+                        <strong>Etihad Tower Observation Deck c/ Café da Tarde</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $27.25</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-etihad-tower-cafe" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Etihad Tower Deck c/ Café Tarde', 'quantidade-etihad-tower-cafe', 27.25)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Yas+Marina+Tour" alt="Tour Yas Marina Circuit">
+                        <strong>Ingresso Tour Yas Marina Circuit (2 horas)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $43.60</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-yas-marina-tour" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Tour Yas Marina Circuit (2h)', 'quantidade-yas-marina-tour', 43.60)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== ABU DHABI PARKS SUBCATEGORY ==================== -->
+                 <div id="abu-dhabi-parks" class="subcategoria">
+                    <h4>ABU DHABI PARKS</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Ferrari+World" alt="Ingresso Ferrari World">
+                        <strong>Ingresso Parque da Ferrari Abu Dhabi</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $95.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-ferrari-world" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Ferrari World AD - Adulto', 'quantidade-ferrari-world', 95)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Warner+Bros+World" alt="Ingresso Warner Bros World">
+                        <strong>Ingresso Parque Warner Bros World Abu Dhabi</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $104.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-warner-bros" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Warner Bros World AD - Adulto', 'quantidade-warner-bros', 104)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=SeaWorld+Abu+Dhabi" alt="Ingresso SeaWorld Abu Dhabi">
+                        <strong>Ingresso Sea World Abu Dhabi</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $104.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-seaworld-ad" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso Sea World AD - Adulto', 'quantidade-seaworld-ad', 104)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=2+Parques+AD" alt="Ingresso 2 Parques Abu Dhabi">
+                        <strong>Ingresso 2 Parques Abu Dhabi (a escolher)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $129.43</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-2-parques-ad-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso 2 Parques AD (Escolha) - Adulto', 'quantidade-2-parques-ad-adulto', 129.43)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=3+Parques+AD" alt="Ingresso 3 Parques Abu Dhabi">
+                        <strong>Ingresso 3 Parques Abu Dhabi (a escolher)</strong>
+                        <p>Adulto</p>
+                        <p><strong>Preço:</strong> $156.68</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-3-parques-ad-adulto" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso 3 Parques AD (Escolha) - Adulto', 'quantidade-3-parques-ad-adulto', 156.68)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=2+Parques+AD+Kids" alt="Ingresso 2 Parques Abu Dhabi Criança">
+                        <strong>Ingresso 2 Parques Abu Dhabi (a escolher)</strong>
+                        <p>Criança</p>
+                        <p><strong>Preço:</strong> $129.43</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-2-parques-ad-crianca" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Ingresso 2 Parques AD (Escolha) - Criança', 'quantidade-2-parques-ad-crianca', 129.43)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== LA PERLE SUBCATEGORY ==================== -->
+                 <div id="la-perle" class="subcategoria">
+                    <h4>LA PERLE by Dragone</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=La+Perle+Normal" alt="La Perle Assento Normal">
+                        <strong>La Perle - Assento Normal</strong>
+                        <p>Ingresso para o show (Bronze/Silver/Gold - verificar disponibilidade)</p>
+                        <p><strong>Preço:</strong> $81.74</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-la-perle-normal" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('La Perle - Assento Normal', 'quantidade-la-perle-normal', 81.74)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=La+Perle+Platinum" alt="La Perle Assento Platinum">
+                        <strong>La Perle - Assento Platinum + Foods & Drinks</strong>
+                        <p>Melhores assentos com acesso ao lounge VIP, snacks e bebidas</p>
+                        <p><strong>Preço:</strong> $141.69</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-la-perle-platinum" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('La Perle - Platinum + Comida/Bebida', 'quantidade-la-perle-platinum', 141.69)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== PORTARE SERVIÇOS SUBCATEGORY ==================== -->
+                 <div id="portare" class="subcategoria">
+                    <h4>PORTARE SERVIÇOS</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Reservas" alt="Serviço de Reservas">
+                        <strong>Serviço de Reservas e Indicações</strong>
+                        <p>Restaurantes e Beach Clubs (valor único pelo serviço)</p>
+                        <p><strong>Preço Total:</strong> $50.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-servico-reservas" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Serviço de Reservas e Indicações', 'quantidade-servico-reservas', 50)">Adicionar</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Roteiro" alt="Roteiro Personalizado">
+                        <strong>Roteiro Personalizado</strong>
+                        <p>Planejamento detalhado da sua viagem (valor único)</p>
+                        <p><strong>Preço Total:</strong> $200.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-roteiro-personalizado" value="1" min="1" max="1" class="quantidade" aria-label="Quantidade" readonly>
+                            <button class="botao" onclick="adicionarAoCarrinho('Roteiro Personalizado', 'quantidade-roteiro-personalizado', 200)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Atendimento+VIP" alt="Atendimento VIP">
+                        <strong>Atendimento VIP 24h + Roteiro</strong>
+                        <p>Suporte telefônico contínuo + roteiro (valor por dia)</p>
+                        <p><strong>Preço por Dia:</strong> $100.00</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-atendimento-vip" value="1" min="1" class="quantidade" aria-label="Quantidade de Dias">
+                            <button class="botao" onclick="adicionarAoCarrinho('Atendimento VIP 24h + Roteiro (por dia)', 'quantidade-atendimento-vip', 100)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Staff+Dia" alt="Staff Dia Todo">
+                        <strong>Staff (Acompanhante não Guia) em Português - Dia Todo</strong>
+                        <p>8 horas, sem carro (valor por staff/dia)</p>
+                        <p><strong>Preço:</strong> $177.11</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-staff-dia" value="1" min="1" class="quantidade" aria-label="Quantidade de Staff/Dias">
+                            <button class="botao" onclick="adicionarAoCarrinho('Staff Português (8h, s/ carro)', 'quantidade-staff-dia', 177.11)">Adicionar</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Staff+Meio" alt="Staff Meio Período">
+                        <strong>Staff (Acompanhante não Guia) em Português - Meio Período</strong>
+                        <p>4 horas, sem carro (valor por staff/meio-período)</p>
+                        <p><strong>Preço:</strong> $108.99</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-staff-meio" value="1" min="1" class="quantidade" aria-label="Quantidade de Staff/Meio-Período">
+                            <button class="botao" onclick="adicionarAoCarrinho('Staff Português (4h, s/ carro)', 'quantidade-staff-meio', 108.99)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- ==================== EVENTOS SUBCATEGORY ==================== -->
+                 <div id="eventos" class="subcategoria">
+                    <h4>EVENTOS</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Sala+Conferencia" alt="Sala de Conferência Abu Dhabi">
+                        <strong>Sala de Conferência + Coffee Break (Abu Dhabi)</strong>
+                        <p>Até 5 horas totais, 1 coffee break (Hotel em Abu Dhabi - valor por pessoa)</p>
+                        <p><strong>Preço por Pessoa:</strong> $57.22</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-sala-conferencia-ad" value="1" min="1" class="quantidade" aria-label="Quantidade de Pessoas">
+                            <button class="botao" onclick="adicionarAoCarrinho('Sala Conferência AD c/ Coffee (por pessoa)', 'quantidade-sala-conferencia-ad', 57.22)">Adicionar</button>
+                        </div>
+                    </div>
+                 </div>
+
+            </div><!-- Fim Dubai -->
+
+            <!-- ==================== EGITO ==================== -->
+            <div id="egito" class="destino" style="display: none;">
+                <h3>Egito</h3>
+                 <div class="menu">
+                    <button onclick="mostrarSubcategoria('egito', 'luxor-assuan')">Luxor e Assuan</button>
+                    <button onclick="mostrarSubcategoria('egito', 'sharm-el-sheikh')">Sharm El Sheikh</button>
+                    <button onclick="mostrarSubcategoria('egito', 'cairo')">Cairo</button>
+                </div>
+                <div id="luxor-assuan" class="subcategoria">
+                    <h4>Luxor e Assuan</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/D37D28/F5F5DC?text=Cruzeiro+Nilo" alt="Luxor e Assuan">
+                        <strong>Cruzeiro Rio Nilo</strong>
+                        <p>Luxor e Assuan (Ex: 5 Dias / 4 Noites)</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-luxor-assuan-5d4n" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Cruzeiro Rio Nilo (Luxor/Assuan)', 'quantidade-luxor-assuan-5d4n', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/D37D28/F5F5DC?text=Passeios+Luxor" alt="Luxor">
+                        <strong>Passeios em Luxor</strong>
+                        <p>Templos, Vale dos Reis, etc.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-luxor" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Passeios em Luxor', 'quantidade-luxor', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/D37D28/F5F5DC?text=Passeios+Assuan" alt="Assuan">
+                        <strong>Passeios em Assuan</strong>
+                        <p>Represa, Templo Philae, Abu Simbel, etc.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-assuan" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Passeios em Assuan', 'quantidade-assuan', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sharm-el-sheikh" class="subcategoria">
+                    <h4>Sharm El Sheikh</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/D37D28/F5F5DC?text=Sharm+El+Sheikh" alt="Sharm El Sheikh">
+                        <strong>Pacotes e Passeios em Sharm El Sheikh</strong>
+                        <p>Mergulho, Praias, Monte Sinai, etc.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                         <div class="quantidade-container">
+                            <input type="number" id="quantidade-sharm" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Pacotes/Passeios Sharm El Sheikh', 'quantidade-sharm', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cairo" class="subcategoria">
+                    <h4>Cairo</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/D37D28/F5F5DC?text=Passeios+Cairo" alt="Cairo">
+                        <strong>Passeios no Cairo</strong>
+                        <p>Pirâmides, Museu Egípcio, Khan el Khalili, etc.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-cairo" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Passeios no Cairo', 'quantidade-cairo', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Fim Egito -->
+
+            <!-- ==================== MALDIVAS ==================== -->
+            <div id="maldivas" class="destino" style="display: none;">
+                <h3>Maldivas</h3>
+                <div class="menu">
+                    <button onclick="mostrarSubcategoria('maldivas', 'resorts-allinclusive')">Resorts All Inclusive</button>
+                    <button onclick="mostrarSubcategoria('maldivas', 'resorts-outros')">Outros Resorts</button>
+                    <button onclick="mostrarSubcategoria('maldivas', 'hoteis-male')">Hotéis em Male</button>
+                </div>
+                <div id="resorts-allinclusive" class="subcategoria">
+                    <h4>Resorts All Inclusive</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/00BFFF/E0FFFF?text=Resort+All+Inclusive" alt="Resort All Inclusive">
+                        <strong>Resorts All Inclusive</strong>
+                        <p>Diversas opções de luxo e categorias</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-resort-allinclusive" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Resort All Inclusive Maldivas', 'quantidade-resort-allinclusive', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resorts-outros" class="subcategoria">
+                     <h4>Outros Resorts (Ex: Meia Pensão, Pensão Completa)</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/00BFFF/E0FFFF?text=Resort+Maldivas" alt="Outros Resorts">
+                        <strong>Resorts com Outros Planos de Refeição</strong>
+                        <p>Opções variadas</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-resort-outros" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Resort Maldivas (Outros Planos)', 'quantidade-resort-outros', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hoteis-male" class="subcategoria">
+                    <h4>Hotéis em Male</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/00BFFF/E0FFFF?text=Hotel+Male" alt="Hotel em Male">
+                        <strong>Hotéis na Capital Male</strong>
+                        <p>Opções para pernoite ou base</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-hotel-male" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Hotel em Male', 'quantidade-hotel-male', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Fim Maldivas -->
+
+            <!-- ==================== JAPÃO ==================== -->
+            <div id="japao" class="destino" style="display: none;">
+                <h3>Japão</h3>
+                <div class="menu">
+                    <button onclick="mostrarSubcategoria('japao', 'tour-classico')">Tour Clássico</button>
+                    <button onclick="mostrarSubcategoria('japao', 'shinkansen-on')">Tour Shinkansen ON</button>
+                    <button onclick="mostrarSubcategoria('japao', 'shinkansen-off')">Tour Shinkansen OFF</button>
+                </div>
+
+                <div id="tour-classico" class="subcategoria">
+                    <h4>Tour Clássico</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FF6347/FFF0F5?text=Japao+Classico" alt="Tour Clássico">
+                        <strong>Tour Clássico Japão (Ex: 7 ou 10 noites)</strong>
+                        <p>Roteiros tradicionais passando pelas principais cidades.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-classico" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Clássico Japão', 'quantidade-classico', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                 </div>
+
+                <div id="shinkansen-on" class="subcategoria">
+                    <h4>Tour Shinkansen ON</h4>
+                     <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FF6347/FFF0F5?text=Shinkansen+ON" alt="Shinkansen ON">
+                        <strong>Tour Shinkansen ON (Ex: 7 ou 10 noites)</strong>
+                        <p>Roteiros incluindo trechos no trem-bala Shinkansen.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-shinkansen-on" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Shinkansen ON Japão', 'quantidade-shinkansen-on', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                 </div>
+
+                <div id="shinkansen-off" class="subcategoria">
+                    <h4>Tour Shinkansen OFF</h4>
+                    <div class="passeio">
+                        <img src="https://via.placeholder.com/300x200/FF6347/FFF0F5?text=Shinkansen+OFF" alt="Shinkansen OFF">
+                         <strong>Tour Shinkansen OFF (Ex: 7 ou 10 noites)</strong>
+                         <p>Roteiros focados em transporte terrestre local ou aéreo interno.</p>
+                        <p><strong>Preço:</strong> Sob Consulta</p>
+                        <div class="quantidade-container">
+                            <input type="number" id="quantidade-shinkansen-off" value="1" min="1" class="quantidade" aria-label="Quantidade">
+                            <button class="botao" onclick="adicionarAoCarrinho('Tour Shinkansen OFF Japão', 'quantidade-shinkansen-off', 0, true)">Adicionar para Consulta</button>
+                        </div>
+                    </div>
+                 </div>
+            </div><!-- Fim Japão -->
+
+            <!-- ==================== CARRINHO ==================== -->
+            <div id="carrinho">
+                <h3>Carrinho de Orçamento</h3>
+                <ul id="carrinho-lista">
+                    <!-- Itens do carrinho serão adicionados aqui -->
+                 </ul>
+                 <div id="carrinho-total-container">
+                    Total Estimado: <span id="carrinho-total">$0.00</span>
+                 </div>
+                <a href="#" class="botao-orcamento" id="botao-orcamento" target="_blank" rel="noopener noreferrer">Pedir Orçamento via WhatsApp</a>
+            </div>
+        </div> <!-- Fim #destinos -->
+    </div> <!-- Fim .container -->
+
+    <script src="scripts.js"></script>
+</body>
+</html>

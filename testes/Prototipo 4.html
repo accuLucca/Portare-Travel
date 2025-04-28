@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Passeios</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #3AD3C8; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .passeio { border: 1px solid #13978C; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .carrinho { border-top: 2px solid #13978C; padding-top: 10px; }
+        .botao { display: block; margin: 10px 0; padding: 10px; background: #13978C; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
+        .botao:hover { background: #0F766E; }
+        input { width: 50px; text-align: center; }
+        .menu { display: flex; justify-content: space-around; margin-bottom: 20px; }
+        .menu button { background: #13978C; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+        .menu button:hover { background: #0F766E; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Escolha seu Destino</h2>
+        <div class="menu">
+            <button onclick="mostrarDestino('dubai')">Dubai</button>
+            <button onclick="mostrarDestino('egito')">Egito</button>
+            <button onclick="mostrarDestino('maldivas')">Maldivas</button>
+            <button onclick="mostrarDestino('japao')">Japão</button>
+        </div>
+        
+        <div id="destinos">
+            <div id="dubai" class="destino">
+                <h3>Dubai</h3>
+                <div class="passeio" data-nome="Safari no Deserto">
+                    <strong>Safari no Deserto</strong>
+                    <input type="number" id="quantidade-safari" value="1" min="1">
+                    <button onclick="adicionarAoCarrinho('Safari no Deserto', 'quantidade-safari', 'dubai')">Adicionar</button>
+                </div>
+                <div class="passeio" data-nome="Burj Khalifa">
+                    <strong>Burj Khalifa</strong>
+                    <input type="number" id="quantidade-burj" value="1" min="1">
+                    <button onclick="adicionarAoCarrinho('Burj Khalifa', 'quantidade-burj', 'dubai')">Adicionar</button>
+                </div>
+            </div>
+            <div id="egito" class="destino" style="display: none;">
+                <h3>Egito</h3>
+                <div class="passeio" data-nome="Pirâmides de Gizé">
+                    <strong>Pirâmides de Gizé</strong>
+                    <input type="number" id="quantidade-piramides" value="1" min="1">
+                    <button onclick="adicionarAoCarrinho('Pirâmides de Gizé', 'quantidade-piramides', 'egito')">Adicionar</button>
+                </div>
+            </div>
+            <div id="maldivas" class="destino" style="display: none;">
+                <h3>Maldivas</h3>
+                <div class="passeio" data-nome="Passeio de Barco">
+                    <strong>Passeio de Barco</strong>
+                    <input type="number" id="quantidade-barco" value="1" min="1">
+                    <button onclick="adicionarAoCarrinho('Passeio de Barco', 'quantidade-barco', 'maldivas')">Adicionar</button>
+                </div>
+            </div>
+            <div id="japao" class="destino" style="display: none;">
+                <h3>Japão</h3>
+                <div class="passeio" data-nome="Monte Fuji Tour">
+                    <strong>Monte Fuji Tour</strong>
+                    <input type="number" id="quantidade-fuji" value="1" min="1">
+                    <button onclick="adicionarAoCarrinho('Monte Fuji Tour', 'quantidade-fuji', 'japao')">Adicionar</button>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Carrinho</h2>
+        <div id="carrinho" class="carrinho"></div>
+        <a id="whatsapp-link" class="botao" href="#" target="_blank">Enviar orçamento pelo WhatsApp</a>
+    </div>
+
+    <script>
+        let carrinho = {};
+
+        function mostrarDestino(destino) {
+            document.querySelectorAll('.destino').forEach(div => div.style.display = 'none');
+            document.getElementById(destino).style.display = 'block';
+        }
+
+        function adicionarAoCarrinho(passeio, inputId, destino) {
+            let quantidade = parseInt(document.getElementById(inputId).value);
+            if (quantidade > 0) {
+                if (!carrinho[destino]) {
+                    carrinho[destino] = {};
+                }
+                carrinho[destino][passeio] = (carrinho[destino][passeio] || 0) + quantidade;
+                atualizarCarrinho();
+            }
+        }
+
+        function removerDoCarrinho(destino, passeio) {
+            delete carrinho[destino][passeio];
+            if (Object.keys(carrinho[destino]).length === 0) {
+                delete carrinho[destino];
+            }
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            let carrinhoDiv = document.getElementById('carrinho');
+            carrinhoDiv.innerHTML = '';
+            for (let destino in carrinho) {
+                carrinhoDiv.innerHTML += `<h3>${destino.toUpperCase()}</h3>`;
+                for (let passeio in carrinho[destino]) {
+                    carrinhoDiv.innerHTML += `<p>${passeio} (x${carrinho[destino][passeio]}) <button onclick="removerDoCarrinho('${destino}', '${passeio}')">Remover</button></p>`;
+                }
+            }
+            atualizarWhatsApp();
+        }
+
+        function atualizarWhatsApp() {
+            let telefone = "554199967816";
+            let mensagem = "Olá! Gostaria de um orçamento para os seguintes passeios:%0A";
+            for (let destino in carrinho) {
+                mensagem += `%0A🌍 *${destino.toUpperCase()}*%0A`;
+                for (let passeio in carrinho[destino]) {
+                    mensagem += `🔹 ${passeio} (Quantidade: ${carrinho[destino][passeio]})%0A`;
+                }
+            }
+            mensagem += "📌 Aguardo mais informações sobre valores e disponibilidade.%0AObrigado!";
+            let url = `https://wa.me/${telefone}?text=${mensagem}`;
+            document.getElementById('whatsapp-link').href = url;
+        }
+    </script>
+</body>
+</html>

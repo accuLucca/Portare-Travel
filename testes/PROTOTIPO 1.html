@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Passeios</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .passeio { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        .carrinho { border-top: 2px solid #333; padding-top: 10px; }
+        .botao { display: block; margin: 10px 0; padding: 10px; background: green; color: white; text-align: center; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Escolha seus Passeios</h2>
+        <div id="passeios-lista">
+            <div class="passeio" data-nome="Safari no Deserto">
+                <strong>Safari no Deserto</strong>
+                <button onclick="adicionarAoCarrinho('Safari no Deserto')">Adicionar</button>
+            </div>
+            <div class="passeio" data-nome="Burj Khalifa">
+                <strong>Burj Khalifa</strong>
+                <button onclick="adicionarAoCarrinho('Burj Khalifa')">Adicionar</button>
+            </div>
+            <div class="passeio" data-nome="Marina Yacht Tour">
+                <strong>Marina Yacht Tour</strong>
+                <button onclick="adicionarAoCarrinho('Marina Yacht Tour')">Adicionar</button>
+            </div>
+        </div>
+        
+        <h2>Carrinho</h2>
+        <div id="carrinho" class="carrinho"></div>
+        <a id="whatsapp-link" class="botao" href="#" target="_blank">Enviar orçamento pelo WhatsApp</a>
+    </div>
+
+    <script>
+        let carrinho = [];
+
+        function adicionarAoCarrinho(passeio) {
+            if (!carrinho.includes(passeio)) {
+                carrinho.push(passeio);
+                atualizarCarrinho();
+            }
+        }
+
+        function removerDoCarrinho(passeio) {
+            carrinho = carrinho.filter(item => item !== passeio);
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            let carrinhoDiv = document.getElementById('carrinho');
+            carrinhoDiv.innerHTML = '';
+            carrinho.forEach(item => {
+                carrinhoDiv.innerHTML += `<p>${item} <button onclick="removerDoCarrinho('${item}')">Remover</button></p>`;
+            });
+            atualizarWhatsApp();
+        }
+
+        function atualizarWhatsApp() {
+            let telefone = "5511999999999"; // Seu número de WhatsApp
+            let mensagem = "Olá! Gostaria de um orçamento com os seguintes passeios:%0A";
+            carrinho.forEach(item => {
+                mensagem += "- " + encodeURIComponent(item) + "%0A";
+            });
+            let url = `https://wa.me/${telefone}?text=${mensagem}`;
+            document.getElementById('whatsapp-link').href = url;
+        }
+    </script>
+</body>
+</html>

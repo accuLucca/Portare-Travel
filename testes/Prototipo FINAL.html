@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Passeios</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #3AD3C8; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .passeio { border: 1px solid #13978C; padding: 10px; margin: 10px 0; border-radius: 5px; text-align: center; }
+        .passeio img { width: 100%; border-radius: 5px; }
+        .botao { display: block; margin: 10px 0; padding: 8px; background: #13978C; color: white; text-align: center; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; border: none; }
+        .botao:hover { background: #0F766E; }
+        .quantidade-container { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
+        .quantidade-container label { font-weight: bold; }
+        .quantidade { width: 40px; text-align: center; font-size: 14px; padding: 4px; border-radius: 5px; border: 1px solid #13978C; }
+        .menu { display: flex; justify-content: space-around; margin-bottom: 20px; }
+        .menu button { background: #13978C; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .menu button:hover { background: #0F766E; }
+        .botao-orcamento {
+            display: block;
+            margin-top: 20px;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .botao-orcamento:hover { background: #128C7E; }
+        h2 { text-align: center; color: #13978C; font-size: 24px; }
+        #agencia { text-align: center; color: #13978C; font-size: 18px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="agencia">
+            <h2>Portare Travel</h2>
+        </div>
+        <h2 id="titulo">Escolha seu Destino</h2>
+        <div id="menu-inicial" class="menu">
+            <button onclick="mostrarDestino('dubai')">Dubai</button>
+            <button onclick="mostrarDestino('egito')">Egito</button>
+            <button onclick="mostrarDestino('maldivas')">Maldivas</button>
+            <button onclick="mostrarDestino('japao')">Japão</button>
+        </div>
+
+        <div id="destinos">
+            <div id="dubai" class="destino" style="display: none;">
+                <h3>Dubai</h3>
+                <div class="passeio" data-preco="100">
+                    <img src="safari.jpg" alt="Safari no Deserto">
+                    <strong>Safari no Deserto</strong>
+                    <p>Explore as dunas douradas do deserto de Dubai com um emocionante passeio de safári.</p>
+                    <p><strong>Preço:</strong> $100 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-safari" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Safari no Deserto', 'quantidade-safari', 100)">Adicionar</button>
+                </div>
+                <div class="passeio" data-preco="120">
+                    <img src="barco.jpg" alt="Passeio de Barco">
+                    <strong>Passeio de Barco</strong>
+                    <p>Desfrute de um incrível passeio de barco pelas águas de Dubai.</p>
+                    <p><strong>Preço:</strong> $120 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-barco" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Passeio de Barco', 'quantidade-barco', 120)">Adicionar</button>
+                </div>
+            </div>
+            <div id="egito" class="destino" style="display: none;">
+                <h3>Egito</h3>
+                <div class="passeio" data-preco="80">
+                    <img src="piramides.jpg" alt="Pirâmides de Gizé">
+                    <strong>Pirâmides de Gizé</strong>
+                    <p>Visite as icônicas Pirâmides do Egito e explore a cultura antiga.</p>
+                    <p><strong>Preço:</strong> $80 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-piramides" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Pirâmides de Gizé', 'quantidade-piramides', 80)">Adicionar</button>
+                </div>
+                <div class="passeio" data-preco="90">
+                    <img src="nilo.jpg" alt="Passeio no Rio Nilo">
+                    <strong>Passeio no Rio Nilo</strong>
+                    <p>Um relaxante cruzeiro pelo lendário Rio Nilo.</p>
+                    <p><strong>Preço:</strong> $90 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-nilo" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Passeio no Rio Nilo', 'quantidade-nilo', 90)">Adicionar</button>
+                </div>
+            </div>
+            <div id="maldivas" class="destino" style="display: none;">
+                <h3>Maldivas</h3>
+                <div class="passeio" data-preco="150">
+                    <img src="snorkel.jpg" alt="Mergulho com Snorkel">
+                    <strong>Mergulho com Snorkel</strong>
+                    <p>Explore os recifes de coral e a vida marinha das Maldivas.</p>
+                    <p><strong>Preço:</strong> $150 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-snorkel" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Mergulho com Snorkel', 'quantidade-snorkel', 150)">Adicionar</button>
+                </div>
+                <div class="passeio" data-preco="180">
+                    <img src="atoll.jpg" alt="Atoll Transfer - Malé">
+                    <strong>Atoll Transfer - Malé</strong>
+                    <p>Traslado até o Atoll de Malé para um dia inesquecível.</p>
+                    <p><strong>Preço:</strong> $180 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-atoll" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Atoll Transfer - Malé', 'quantidade-atoll', 180)">Adicionar</button>
+                </div>
+            </div>
+            <div id="japao" class="destino" style="display: none;">
+                <h3>Japão</h3>
+                <div class="passeio" data-preco="200">
+                    <img src="toquio.jpg" alt="Tour em Tóquio">
+                    <strong>Tour em Tóquio</strong>
+                    <p>Conheça os principais pontos turísticos da capital japonesa.</p>
+                    <p><strong>Preço:</strong> $200 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-toquio" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Tour em Tóquio', 'quantidade-toquio', 200)">Adicionar</button>
+                </div>
+                <div class="passeio" data-preco="220">
+                    <img src="kioto.jpg" alt="Guias Turísticas em Quioto">
+                    <strong>Guias Turísticas em Quioto</strong>
+                    <p>Visite os templos e jardins tradicionais de Quioto com um guia local.</p>
+                    <p><strong>Preço:</strong> $220 por pessoa</p>
+                    <div class="quantidade-container">
+                        <label>Nº de Pessoas:</label>
+                        <input type="number" id="quantidade-kioto" value="1" min="1" class="quantidade">
+                    </div>
+                    <button class="botao" onclick="adicionarAoCarrinho('Guias Turísticas em Quioto', 'quantidade-kioto', 220)">Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <h3>Carrinho</h3>
+        <ul id="carrinho-lista"></ul>
+        <h3>Total: <strong>$<span id="total">0</span></strong></h3>
+        <a href="#" class="botao-orcamento" onclick="enviarWhatsApp()">Enviar Orçamento via WhatsApp</a>
+    </div>
+
+    <script>
+        let carrinho = [];
+        let total = 0;
+        let destinoSelecionado = ''; // Variável para armazenar o destino selecionado
+
+        function mostrarDestino(destino) {
+            destinoSelecionado = destino.charAt(0).toUpperCase() + destino.slice(1); // Atualiza o destino selecionado
+            document.getElementById('titulo').innerText = destinoSelecionado;
+            document.getElementById('menu-inicial').style.display = 'none';
+            document.getElementById('destinos').style.display = 'block';
+
+            let destinos = ['dubai', 'egito', 'maldivas', 'japao'];
+            destinos.forEach((item) => {
+                if (item === destino) {
+                    document.getElementById(item).style.display = 'block';
+                } else {
+                    document.getElementById(item).style.display = 'none';
+                }
+            });
+        }
+
+        function adicionarAoCarrinho(nome, inputId, preco) {
+            let quantidade = document.getElementById(inputId).value;
+            quantidade = parseInt(quantidade);
+            let item = {
+                nome: nome,
+                preco: preco,
+                quantidade: quantidade,
+                total: preco * quantidade
+            };
+            carrinho.push(item);
+            total += item.total;
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            let carrinhoLista = document.getElementById('carrinho-lista');
+            carrinhoLista.innerHTML = '';
+            carrinho.forEach((item) => {
+                let li = document.createElement('li');
+                li.textContent = `${item.nome} - ${item.quantidade} x $${item.preco} = $${item.total}`;
+                carrinhoLista.appendChild(li);
+            });
+            document.getElementById('total').textContent = total;
+        }
+
+        function enviarWhatsApp() {
+            let mensagem = `Olá, Portare! Tudo bem?\nPossuo interesse nos seguintes passeios:\n`;
+
+            if (destinoSelecionado) {
+                mensagem += `*${destinoSelecionado}*\n`;
+            }
+
+            carrinho.forEach((item) => {
+                let nomePasseio = item.nome;
+                let quantidade = item.quantidade;
+                let preco = item.preco;
+                let totalItem = item.total;
+
+                mensagem += `\n_• ${nomePasseio} (Qtd: ${quantidade}) - Total: $${totalItem}_\n`;
+            });
+
+            mensagem += `\n*Total do Orçamento: $${total}*`; // Adicionando o total
+
+            let url = `https://wa.me/+554199967816?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
