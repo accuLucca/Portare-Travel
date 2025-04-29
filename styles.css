@@ -121,6 +121,9 @@ h3 {
     margin-bottom: 20px;
     border: 1px solid var(--light-gray);
 }
+#titulo {
+    font-size: 22px; /* Adjusted font size to make it smaller */
+}
 
 .passeio img {
     width: 100%;
