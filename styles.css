@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #0D7C6C;
+    --primary-color: #FFF9D7;
     --secondary-color: #33C4B6;
-    --white: #FFF9D7;
+    --white: #0D7C6C;
     --primary-color-dark: #0A7216;
     --secondary-color-dark: #2FBA52;
-    --text-color: #0D7C6C;
+    --text-color:#FFF9D7;
     --shadow-medium: rgba(13, 124, 108, 0.15);
     --shadow-light: rgba(13, 124, 108, 0.1);
     --whatsapp-green: #2FBA52;
@@ -34,8 +34,9 @@ body {
 
 .container {
     max-width: 800px;
+    margin: auto;
     width: 100%;
-    background: var(--white);
+    background-color: rgba(13, 124, 108, 0.8); /* Modificado para usar rgba */
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px var(--shadow-medium);
@@ -81,11 +82,11 @@ h3 {
     min-height: 50px;
     text-align: center;
     box-shadow: 0 2px 4px var(--shadow-light);
-    background: var(--primary-color);
+    background-color: rgba(255, 249, 215, 1); /* Replace var(--primary-color) with solid color */
 }
 
 .menu button:hover {
-    background: #33C4B6;
+    background-color: rgba(51, 196, 182, 1); /* Replace hover color with solid color */
     transform: scale(1.05);
     box-shadow: 0 4px 8px var(--shadow-medium);
 }
@@ -160,7 +161,7 @@ h3 {
 }
 
 .botao {
-    background: var(--primary-color);
+    background-color: rgba(255, 249, 215, 1); /* Replace var(--primary-color) with solid color */
     color: var(--white);
     padding: 10px;
     border-radius: 6px;
@@ -174,11 +175,11 @@ h3 {
 }
 
 .botao:hover {
-    background: var(--primary-color-dark);
+    background-color: rgba(51, 196, 182, 1); /* Replace hover color with solid color */
 }
 
 .botao-orcamento {
-    background: var(--whatsapp-green);
+    background-color: rgba(255, 249, 215, 1); /* Replace var(--primary-color) with solid color */
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -195,7 +196,7 @@ h3 {
 }
 
 .botao-orcamento:hover {
-    background: #1EBE57;
+    background-color: rgba(51, 196, 182, 1); /* Replace hover color with solid color */
     transform: scale(1.02);
 }
 
@@ -249,23 +250,23 @@ input[type=number] {
 }
 
 #menu-inicial button:nth-child(1) {
-    background: #0D7C6C;
+    background: #FFF9D7;
 }
 
 #menu-inicial button:nth-child(2) {
-    background: #0D7C6C;
+    background: #FFF9D7;
 }
 
 #menu-inicial button:nth-child(3) {
-    background: #0D7C6C;
+    background: #FFF9D7;
 }
 
 #menu-inicial button:nth-child(4) {
-    background: #0D7C6C;
+    background: #FFF9D7;
 }
 
 .botao-voltar {
-    background: var(--primary-color);
+    background-color: rgba(255, 249, 215, 1); /* Replace var(--primary-color) with solid color */
     color: var(--white);
     padding: 10px 15px;
     border-radius: 8px;
@@ -279,7 +280,7 @@ input[type=number] {
 }
 
 .botao-voltar:hover {
-    background: var(--primary-color-dark);
+    background-color: rgba(51, 196, 182, 1); /* Replace hover color with solid color */
 }
 
 #carrinho {
